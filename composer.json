@@ -1,0 +1,23 @@
+{
+    "name": "niklaslu/php-sent-email",
+    "description": "php发送邮件",
+    "license": "GUN",
+    "authors": [{
+        "name": "lucong",
+        "email": "332553882@qq.com"
+    }],
+    "require": {
+        "phpmailer/phpmailer": "~5.2"
+    },
+    "autoload" : {
+	    "psr-4" : {
+	      "niklaslu\\" : "src"
+	    }
+	  },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
