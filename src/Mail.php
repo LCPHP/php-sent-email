@@ -12,6 +12,8 @@ class Mail {
         
         $mail = new \PHPMailer();
         
+        $mail->isSMTP();
+        
         if ($config['debug']){
             $mail->SMTPDebug = 3;
         }
@@ -36,9 +38,10 @@ class Mail {
         
         $this->config = $config;
         $this->mail = $mail;
+        
     }
     
-    public function sent($to , $subject , $body , $altBody  = '', $replyTo = NULL , $attachments = null ){
+    public function sent($to , $subject , $body , $replyTo = NULL , $attachments = null ){
         
         if (is_array($to)){
             foreach ($to as $t){
@@ -65,7 +68,7 @@ class Mail {
         $this->mail->isHTML(true);
         $this->mail->Subject = $subject;
         $this->mail->Body = $body;
-        $this->mail->AltBody = $altBody;
+//         $this->mail->AltBody = $altBody;
         
         if (!$this->mail->send()){
             $this->error = $this->mail->ErrorInfo;
@@ -75,6 +78,12 @@ class Mail {
         }
     }
     
+    public function addReplyTo($address , $name = ''){
+        
+        $this->mail->addReplyTo($address , $name);
+        
+        return true;
+    }
     /**
      * 添加抄送
      */
