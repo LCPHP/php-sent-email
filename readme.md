@@ -47,6 +47,13 @@ $to = '332553882@qq.com'; // 发送人
 $subject = '测试标题'; // 邮件标题
 $body = "<p>测试内容</p>"; // 邮件内容支持html
 
+// 添加附件
+// $attachments = [
+//     ['a.txt' , 'a'],
+//     ['b.txt' , 'b']
+// ];
+// $mail->addAttachments($attachments);
+
 $res = $mail->sent($to, $subject, $body);
 
 

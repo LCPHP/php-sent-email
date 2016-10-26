@@ -36,6 +36,14 @@ $CC = [
 $to = '332553882@qq.com';
 $subject = '测试标题';
 $body = "<p>测试内容</p>";
+
+// 添加附件
+// $attachments = [
+//     ['a.txt' , 'a'],
+//     ['b.txt' , 'b']
+// ];
+// $mail->addAttachments($attachments);
+
 $res = $mail->sent($to, $subject, $body);
 
 

@@ -54,16 +54,7 @@ class Mail {
         if ($replyTo){
             $this->mail->addReplyTo($replyTo);
         }
-        if ($attachments){
-            foreach ($attachments as $a){
-                if (is_array($a)){
-                    $this->mail->addAttachment($a[0] , $a[1]);
-                }else{
-                    $this->mail->addAttachment($a);
-                }
-                
-            }
-        }
+        
 
         $this->mail->isHTML(true);
         $this->mail->Subject = $subject;
@@ -76,6 +67,25 @@ class Mail {
         }else{
             return true;
         }
+    }
+    
+    /**
+     * 添加附件
+     */
+    public function addAttachments($attachments){
+        
+        if ($attachments){
+            foreach ($attachments as $a){
+                if (is_array($a)){
+                    $this->mail->addAttachment($a[0] , $a[1]);
+                }else{
+                    $this->mail->addAttachment($a);
+                }
+        
+            }
+        }
+        
+        return true;
     }
     
     public function addReplyTo($address , $name = ''){
