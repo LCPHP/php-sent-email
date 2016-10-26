@@ -2,6 +2,10 @@
 
 php利用smtp发送邮件
 
+Composer安装  
+
+`composer require niklaslu/php-sent-email`
+
 发邮件类使用 [PHPMailer](https://github.com/PHPMailer/PHPMailer) ,自己只是简单封装了下
 
 #### 示例代码
